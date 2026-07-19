@@ -2,8 +2,25 @@
 
 > This file documents important changes in Vyku.
 > Versioning follows [Semantic Versioning](https://semver.org/).
+> Updated: 2026-07-19
 
 [简体中文](CHANGELOG.md) | [繁體中文](CHANGELOG-zh-Hant.md)
+
+---
+
+## [0.14.0] - 2026-07-19
+
+### 2026-07-19 Update
+
+- **Signed Android release and cross-platform data safety**
+- Added field-specific Android controls for numbers, dates, selects, switches, and multiline text, with first-error focusing
+- Added camera, image, and file attachment sources with SHA-256 verification before and after storage and cleanup on failure
+- Added contextual notification permission requests and rescheduling of pending reminders after permission recovery
+- Unified Windows and Android on the encrypted schema 3 backup format, with database and attachment validation plus safe rollback
+- Established schema 3 as the first public backup compatibility baseline; unpublished schema 1 / 2 test backups are not supported
+- Opened Android data tools in Settings and added 24-hour automatic update checks plus manual checks
+- Limited update checks to the public GitHub latest release and accepted only trusted repository HTTPS download links
+- Switched Android public builds to a fixed release signature; V0.13.0 debug builds cannot upgrade to the signed package, while higher versions using the V0.14.0 signing identity can upgrade in place
 
 ---
 

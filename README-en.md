@@ -1,8 +1,9 @@
 # Vyku
 
 > Every important asset, a place to belong
+> Updated: 2026-07-19
 
-[![Version](https://img.shields.io/badge/version-0.13.0-green.svg)](CHANGELOG-en.md)
+[![Version](https://img.shields.io/badge/version-0.14.0-green.svg)](CHANGELOG-en.md)
 
 ---
 
@@ -17,13 +18,15 @@ Vyku is a family digital asset hub that helps you manage all your important asse
 ## Features
 
 - **Asset Management** - Manage devices, accounts, subscriptions, domains, servers, certificates, and documents
-- **Attachment Management** - Upload images, PDFs, and documents, linked to assets
-- **Reminders** - Automatic reminders for warranties, domains, and subscriptions
+- **Attachment Management** - Capture photos or choose images and files, then validate and store them in the app-private directory
+- **Reminders** - Automatic reminders for warranties, domains, and subscriptions, including Android notification-permission recovery
 - **Local Search** - Quickly find any asset
 - **Encrypted Backup** - AES-256-GCM encryption for secure export/import
 - **Backup Verification & Restore Protection** - Verify backups before restore, with automatic rollback on failure
 - **Attachment Health Check** - Detect missing files, hash mismatches, and orphan files
 - **Data Directory Clarity** - Separate portable and installer data paths, with backup-based migration
+- **Cross-platform Restore** - Windows and Android share the encrypted schema 3 backup format
+- **Update Checks** - Automatically or manually check public stable GitHub releases
 - **Light Free Tier** - Core workflows stay usable, heavy scale and efficiency features show upgrade prompts
 - **Multi-language** - Simplified Chinese, Traditional Chinese, English
 
@@ -43,7 +46,7 @@ Vyku is a family digital asset hub that helps you manage all your important asse
 
 - **Framework**: Flutter
 - **Database**: SQLite + Drift
-- **Platform**: Windows available now, Android MVP internally validated, iOS planned
+- **Platforms**: Windows and Android
 
 ---
 
@@ -53,17 +56,23 @@ Visit [GitHub Releases](https://github.com/elliotsu1107/vyku-releases/releases) 
 
 **Windows**: Download the latest `vyku-v<version>-windows-x64-portable.zip`, extract it, and run `vyku.exe`.
 
-Package name example: `vyku-v0.13.0-windows-x64-portable.zip`. Installers use `installer`; portable packages use `portable`.
+Package name example: `vyku-v0.14.0-windows-x64-portable.zip`. Installers use `installer`; portable packages use `portable`.
 
-**Android**: The current source can build and install a debug APK for Android MVP internal testing. A signed public package is not available yet.
+**Android**: Download `vyku-v0.14.0-android.apk` and its matching `.sha256` file. Verify the APK SHA-256 before installation. When installing from a browser or file manager, allow “Install unknown apps” only temporarily and disable it for that source afterward.
 
 Release notes are provided in Simplified Chinese, Traditional Chinese, and English.
 
-### Android MVP Scope
+### Android Upgrade Notes
 
-Android supports creating, viewing, editing, and deleting assets, search and filters, reminder viewing, and attachment opening. Data stays in the app-private directory on the current device and is removed when the app is uninstalled.
+- V0.13.0 used an internal debug signature and cannot be upgraded in place to the signed V0.14.0 package. Treat V0.14.0 as a fresh install.
+- Starting with V0.14.0, later builds signed with the same release key and a higher `versionCode` can upgrade in place.
+- Uninstalling removes the Android app-private directory. Create an encrypted `.vbk` backup before migration or reinstallation.
 
-This release does not include cross-device sync, complete Android backup and restore, or the complete system-notification experience.
+### Backup Compatibility
+
+Schema 3 in V0.14.0 is the first public backup compatibility baseline. It includes the database plus active-attachment manifests, sizes, and SHA-256 values. `.vbk` backups can move between Windows and Android; unpublished schema 1 / 2 test backups are not supported.
+
+Update checks only access the public [GitHub latest release API](https://api.github.com/repos/elliotsu1107/vyku-releases/releases/latest). No device, asset, or usage data is uploaded.
 
 ---
 
