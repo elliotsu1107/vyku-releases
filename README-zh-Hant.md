@@ -72,6 +72,8 @@
 
 V0.14.0 的 schema 3 是第一個公開備份相容基線，包含資料庫、有效附件清單、大小和 SHA-256。Windows 與 Android 可透過 `.vbk` 雙向移轉；未公開的 schema 1 / 2 測試備份不受支援。
 
+為避免行動裝置記憶體耗盡，單一加密備份檔案最大 65 MB；ZIP 最多 256 個項目，宣告解壓縮總量最大 64 MB，單一項目壓縮率不得超過 1000 倍。超出限制的備份會在讀取項目內容前被拒絕。
+
 更新檢查只會存取公開的 [GitHub latest release API](https://api.github.com/repos/elliotsu1107/vyku-releases/releases/latest)，不會上傳裝置、資產或使用資料。
 
 ---

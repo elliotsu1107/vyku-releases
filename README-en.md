@@ -72,6 +72,8 @@ Release notes are provided in Simplified Chinese, Traditional Chinese, and Engli
 
 Schema 3 in V0.14.0 is the first public backup compatibility baseline. It includes the database plus active-attachment manifests, sizes, and SHA-256 values. `.vbk` backups can move between Windows and Android; unpublished schema 1 / 2 test backups are not supported.
 
+To prevent memory exhaustion on mobile devices, an encrypted backup file is limited to 65 MB. A ZIP may contain at most 256 entries, declare at most 64 MB of uncompressed data, and use no more than a 1000:1 compression ratio per entry. Backups over these limits are rejected before entry content is read.
+
 Update checks only access the public [GitHub latest release API](https://api.github.com/repos/elliotsu1107/vyku-releases/releases/latest). No device, asset, or usage data is uploaded.
 
 ---

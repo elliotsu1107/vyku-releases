@@ -12,6 +12,7 @@
 
 ### 2026-07-19 Update
 
+- Limited backup file size, ZIP entry count, declared uncompressed size, and compression ratio to reduce memory-exhaustion risks from unsafe backups
 - **Signed Android release and cross-platform data safety**
 - Added field-specific Android controls for numbers, dates, selects, switches, and multiline text, with first-error focusing
 - Added camera, image, and file attachment sources with SHA-256 verification before and after storage and cleanup on failure

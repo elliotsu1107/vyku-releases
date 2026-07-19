@@ -73,6 +73,8 @@
 
 V0.14.0 的 schema 3 是首个公开备份兼容基线，包含数据库、活跃附件清单、大小和 SHA-256。Windows 与 Android 可通过 `.vbk` 双向迁移；未公开的 schema 1 / 2 测试备份不受支持。
 
+为避免移动设备内存耗尽，单个加密备份文件最大 65 MB；ZIP 最多 256 个条目，声明解压总量最大 64 MB，单条压缩率不得超过 1000 倍。超出限制的备份会在读取条目内容前被拒绝。
+
 更新检查只访问公开的 [GitHub latest release API](https://api.github.com/repos/elliotsu1107/vyku-releases/releases/latest)，不上传设备、资产或使用数据。
 
 ---
