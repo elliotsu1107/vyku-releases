@@ -1,9 +1,9 @@
 # Vyku
 
 > Every important asset, a place to belong
-> Updated: 2026-07-19
+> Updated: 2026-07-20
 
-[![Version](https://img.shields.io/badge/version-0.14.0-green.svg)](CHANGELOG-en.md)
+[![Version](https://img.shields.io/badge/version-0.14.1-green.svg)](CHANGELOG-en.md)
 
 ---
 
@@ -56,21 +56,21 @@ Visit [GitHub Releases](https://github.com/elliotsu1107/vyku-releases/releases) 
 
 **Windows**: Download the latest `vyku-v<version>-windows-x64-portable.zip`, extract it, and run `vyku.exe`.
 
-Package name example: `vyku-v0.14.0-windows-x64-portable.zip`. Installers use `installer`; portable packages use `portable`.
+Package name example: `vyku-v0.14.1-windows-x64-portable.zip`. Installers use `installer`; portable packages use `portable`.
 
-**Android**: Download `vyku-v0.14.0-android.apk` and its matching `.sha256` file. Verify the APK SHA-256 before installation. When installing from a browser or file manager, allow “Install unknown apps” only temporarily and disable it for that source afterward.
+**Android**: Download `vyku-v0.14.1-android.apk` and its matching `.sha256` file. Verify the APK SHA-256 before installation. When installing from a browser or file manager, allow “Install unknown apps” only temporarily and disable it for that source afterward.
 
 Release notes are provided in Simplified Chinese, Traditional Chinese, and English.
 
 ### Android Upgrade Notes
 
-- V0.13.0 used an internal debug signature and cannot be upgraded in place to the signed V0.14.0 package. Treat V0.14.0 as a fresh install.
-- Starting with V0.14.0, later builds signed with the same release key and a higher `versionCode` can upgrade in place.
+- V0.13.0 used an internal debug signature and cannot be upgraded in place to the signed V0.14.1 package. Treat V0.14.1 as a fresh install.
+- Starting with V0.14.1, later builds signed with the same release key and a higher `versionCode` can upgrade in place.
 - Uninstalling removes the Android app-private directory. Create an encrypted `.vbk` backup before migration or reinstallation.
 
 ### Backup Compatibility
 
-Schema 3 in V0.14.0 is the first public backup compatibility baseline. It includes the database plus active-attachment manifests, sizes, and SHA-256 values. `.vbk` backups can move between Windows and Android; unpublished schema 1 / 2 test backups are not supported.
+Schema 3 in V0.14.1 is the first public backup compatibility baseline. It includes the database plus active-attachment manifests, sizes, and SHA-256 values. `.vbk` backups can move between Windows and Android; unpublished schema 1 / 2 test backups are not supported.
 
 To prevent memory exhaustion on mobile devices, an encrypted backup file is limited to 65 MB. A ZIP may contain at most 256 entries, declare at most 64 MB of uncompressed data, and use no more than a 1000:1 compression ratio per entry. Backups over these limits are rejected before entry content is read.
 

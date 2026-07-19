@@ -1,9 +1,9 @@
 # 归屿 Vyku
 
 > 让家庭的重要资产都有归处
-> 更新日期：2026-07-19
+> 更新日期：2026-07-20
 
-[![Version](https://img.shields.io/badge/version-0.14.0-green.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.14.1-green.svg)](CHANGELOG.md)
 
 ---
 
@@ -57,21 +57,21 @@
 
 **Windows**: 下载最新 `vyku-v<version>-windows-x64-portable.zip`，解压后运行 `vyku.exe`
 
-发布包命名示例：`vyku-v0.14.0-windows-x64-portable.zip`。安装包标注 `installer`，便携包标注 `portable`。
+发布包命名示例：`vyku-v0.14.1-windows-x64-portable.zip`。安装包标注 `installer`，便携包标注 `portable`。
 
-**Android**: 下载 `vyku-v0.14.0-android.apk` 和同名 `.sha256` 文件。安装前核对 APK 的 SHA-256；从浏览器或文件管理器安装时，仅临时允许“安装未知应用”，完成后恢复该来源的禁止安装设置。
+**Android**: 下载 `vyku-v0.14.1-android.apk` 和同名 `.sha256` 文件。安装前核对 APK 的 SHA-256；从浏览器或文件管理器安装时，仅临时允许“安装未知应用”，完成后恢复该来源的禁止安装设置。
 
 发布页说明提供简体中文、繁體中文、English 三语。
 
 ### Android 升级说明
 
-- V0.13.0 是内部 debug 签名包，不能覆盖安装 V0.14.0 正式包；请将 V0.14.0 视为全新安装。
-- 从 V0.14.0 起，使用同一正式签名且 `versionCode` 更高的版本可以覆盖升级。
+- V0.13.0 是内部 debug 签名包，不能覆盖安装 V0.14.1 正式包；请将 V0.14.1 视为全新安装。
+- 从 V0.14.1 起，使用同一正式签名且 `versionCode` 更高的版本可以覆盖升级。
 - 卸载应用会删除 Android 应用私有目录。迁移或重装前先创建加密 `.vbk` 备份。
 
 ### 备份兼容性
 
-V0.14.0 的 schema 3 是首个公开备份兼容基线，包含数据库、活跃附件清单、大小和 SHA-256。Windows 与 Android 可通过 `.vbk` 双向迁移；未公开的 schema 1 / 2 测试备份不受支持。
+V0.14.1 的 schema 3 是首个公开备份兼容基线，包含数据库、活跃附件清单、大小和 SHA-256。Windows 与 Android 可通过 `.vbk` 双向迁移；未公开的 schema 1 / 2 测试备份不受支持。
 
 为避免移动设备内存耗尽，单个加密备份文件最大 65 MB；ZIP 最多 256 个条目，声明解压总量最大 64 MB，单条压缩率不得超过 1000 倍。超出限制的备份会在读取条目内容前被拒绝。
 
