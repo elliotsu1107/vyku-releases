@@ -2,9 +2,40 @@
 
 > This file documents important changes in Vyku.
 > Versioning follows [Semantic Versioning](https://semver.org/).
-> Updated: 2026-07-20
+> Updated: 2026-10-25
 
 [简体中文](CHANGELOG.md) | [繁體中文](CHANGELOG-zh-Hant.md)
+
+---
+
+## [0.18.0] - 2026-10-26
+
+
+### 2026-10-25 Update
+
+- **Migrated the visual system to Clay (replaces the V0.18.0-A blue + cool-gray baseline)**
+- Brand color moved from blue `#2563EB` to clay `#D97757`; the canvas is now warm paper `#FAF9F5` and primary text is graphite `#141413` (no pure white or pure black)
+- Primitive layer renamed to Clay tokens: `clay` / `clayDark` / `clayPress` / `clayDeep` / `clayTint` / `neutral50…900` (including the calibrated 450 step) / `slate` / `ivory` / `darkCanvas`, plus the four functional states (solid / bg / text / border) and the dark neutral ramp
+- The 16 semantic tokens keep their **field names**; only the light and dark values changed. Three contrast calibrations: filled-button text now graphite (5.90:1), clay used as text or icon now takes the deeper `clayPress` (5.68:1), and tertiary text moves to `#6E6D66` (4.93:1)
+- Three font families: Noto Serif SC for headings (`GoogleFonts.notoSerifSc`, weight capped at 600, never 700), Noto Sans SC for body text, and JetBrains Mono for eyebrows and numeric labels; all 15 Material roles now follow Clay `font.scale`
+- Component layer: cards use surface steps plus a 1px hairline with `elevation` 0; `ColorScheme.surfaceTint` is cleared so surfaces are no longer tinted by the primary color; outlined buttons use ink, text buttons use the deeper clay, and the enabled input border uses tertiary text to reach 3:1
+- Spacing and radius now cover the Clay steps (`space3/7/8/9/10`, `radiusXl/2xl`), while the touch target stays at 48 (stricter than Clay's 44)
+- Added contrast assertion tests across 16 tokens × light/dark (4.5:1 for text, 3:1 for non-text, with the WCAG relative-luminance algorithm and five pinned known deviations); `lib/` no longer contains legacy color names, `Colors.white` / `Colors.black`, or hardcoded colors outside the primitive layer
+- Known deviations are recorded in spec 4.5.1 (D1–D4 accepted, D6 an intentional line-height deviation); the former open decision **D5 is resolved** — all 8 code sites for page section titles now use `ring` instead of raw clay (5.68:1 on the canvas, 5.35:1 in dark)
+- Fixed input focus-state contrast: `inputDecorationTheme` now resolves label and floating-label colors per state (focused `ring` at 5.39:1, error `error`, otherwise `textSecondary`), and a new `textSelectionTheme` gives the cursor and handles `ring` with a `ring@40%` selection; the focused label moves from the framework default of raw clay at 2.81:1 to 5.39:1, backed by render-level assertions and pins for the D5 sites
+
+### 2026-10-18 Update
+
+- **Client visual system (V0.18.0-A, complete)**
+- Established three layers of visual tokens: primitive values (`AppColors`, `AppSizes`, `AppSpacing`, `AppShadows`, `AppMotion`), semantics (16 semantic colors, one set each for light and dark, wired into `ColorScheme`), and components (theme mappings for buttons, inputs, cards, lists, dialogs, navigation bars, chips, snack bars, app bars, and progress indicators)
+- Added a type scale with a Chinese font-family fallback strategy; statistics, amounts, and dates use tabular figures so digit changes no longer shift layout
+- Added responsive breakpoints with `compact` / `medium` / `expanded` layouts and an 840 cap on content width on wide screens
+- Added System / Light / Dark themes, with a theme entry and selection subpage under Settings → Language & Display, and the choice is kept across restarts
+- Redesigned seven page types: asset list, search, asset detail, create/edit, reminders, attachments, and settings
+- Unified focus-ring and disabled-state visuals, with visible keyboard focus
+- Dark theme now expresses hierarchy with borders and surface brightness instead of shadows
+- Added new copy keys such as `settingsTheme*` and `homeReminderFuture`, keeping Simplified Chinese, Traditional Chinese, and English complete
+- Added token compliance scanning, so pages no longer contain hardcoded colors, `Colors.*`, `withOpacity`, or font-size literals
 
 ---
 
@@ -163,3 +194,13 @@
 - Completed product planning and documentation
 - Technical architecture design completed
 - Data model definition completed
+
+### 2026-10-26 Update (V0.18.0-B: web site)
+
+- Added the `site/` static website: **18 pages** (home, features, docs, download, changelog and FAQ across Simplified Chinese, Traditional Chinese and English); Simplified Chinese lives at the root with `zh-Hant/` and `en/` as subdirectories
+- The site reuses the same **Clay design system** as the clients (warm paper `#FAF9F5`, clay accent `#D97757`, slate `#141413`, 11 warm neutrals); tokens and components are byte-identical copies of `clay-html` v0.14.0, with only container spacing and CJK serif stacks overridden
+- Layout follows a 12-column grid across four breakpoints (375 / 768 / 1024 / 1440) with editorial typography (serif headings, monospace eyebrows, `tabular-nums`); hierarchy relies on surface steps and 1px hairlines — no shadows, gradients or external links anywhere
+- Download entries follow **truthfulness first**: until V0.18.0 ships, both platform buttons are disabled placeholders with three-language explanations, and no link points to `.apk`, `.zip` or `.exe`
+- Added author-side tooling: `tools/build_site.py` (zero-runtime static generator with `--check`) and `tools/check_site.py` (gates for forbidden patterns, links, i18n structure, accessibility, size, contrast and canvas colour)
+- All site gates pass: 25 contrast pairs within tolerance, 12 forbidden patterns at 0 hits, 0 broken/external/binary links, byte-identical regeneration, no horizontal scrolling in 32/32 width combinations, canvas mode colour exactly `#FAF9F5` / `#1F1E1D`
+- Fixed three layout defects found by manual inspection: an unhidden icon sprite causing ~170px of blank space above the fold, misaligned FAQ chevrons, and a `34em` list cap squeezing the capability list into a narrow strip
