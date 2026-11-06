@@ -1,0 +1,31 @@
+Copyright (c) 2026 Elliot. All rights reserved.
+
+SOFTWARE LICENCE — LIMITED USE GRANT
+
+Subject to the terms below, you are granted a limited, non-exclusive,
+non-transferable, revocable licence to download and install the release
+artifacts published in this repository (application installers and
+archives) and to use them for personal, non-commercial purposes.
+
+You may NOT:
+  1. copy, modify, adapt, translate or create derivative works of the
+     software, in whole or in part;
+  2. distribute, sublicense, publish, sell, rent, lease or otherwise make
+     the software available to any third party;
+  3. reverse engineer, decompile or disassemble the software, except to the
+     extent permitted by applicable law;
+  4. remove or alter any copyright, trademark or other proprietary notice;
+  5. use the software for any commercial purpose.
+
+The documentation in this repository (README and CHANGELOG files, release
+notes) may be read and shared unmodified, provided this licence and the
+copyright notice are retained.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL
+THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR ITS USE.
+
+Third-party components included in the software are governed by their own
+licences; see the in-application "Open-source licences" page.
