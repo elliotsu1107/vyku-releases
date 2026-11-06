@@ -8,6 +8,29 @@
 
 ---
 
+## [0.18.1] - 2026-11-07
+
+### Added
+
+- **Open-source licences page**: a new entry under Settings → About listing the BSD / MIT / Apache notices for every third-party component bundled with the app (the Flutter framework and its plugins). This is a licensing requirement for redistributing the application and was previously missing.
+- **Official web site is live**: <https://elliotsu1107.github.io/vyku/> (18 pages in three languages; build artefacts only).
+
+### Fixed
+
+- **Buttons were underlined**: the Clay primary and secondary buttons (including the homepage's main CTA) inherited the body-link underline — 15 occurrences; now explicitly removed.
+- **Missing inline-code styling**: 60 `<code>` spans fell back to the browser's default monospace font; they now use the JetBrains Mono stack at 13px on a warm tint with 4px radius.
+- **Emphasis weight**: 21 `<strong>` elements dropped from the browser default of 700 to 600, matching the site's weight scale.
+- **Printing in dark theme**: printing while the dark theme was active produced light text on white paper; printing now temporarily switches to the light semantic palette.
+- **Download page data**: after the release the page still showed the "no build available" placeholder; it now shows the real version, file sizes, SHA-256 digests and download links.
+
+### Engineering
+
+- `site.css` was split by responsibility into `site.css` (foundation) and `site-sections.css` (page blocks), each with its own budget; print styles live in `site-print.css`.
+- The site gates now cover three previously bypassable blind spots (`rgb()/hsl()` colour notation, `outline:none`, `font-weight:bold`) plus a new check for empty-fragment bare links.
+- The "zero external links" rule gained its single documented exception: only the release download URLs declared in the site configuration.
+- Added a fully automated release pipeline on GitHub Actions: pushing a tag builds both Windows and Android and publishes the release.
+- All three repositories now carry a proprietary copyright licence.
+
 ## [0.18.0] - 2026-10-26
 
 
