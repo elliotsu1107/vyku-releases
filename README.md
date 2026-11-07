@@ -57,15 +57,21 @@
 
 ---
 
+## 官网
+
+<https://elliotsu1107.github.io/vyku/> —— 三语（简体 / 繁體 / English）介绍、使用文档、下载入口与更新日志。
+
+---
+
 ## 下载安装
 
 访问 [GitHub Releases](https://github.com/elliotsu1107/vyku-releases/releases) 下载最新版本。
 
 **Windows**: 下载最新 `vyku-v<version>-windows-x64-portable.zip`，解压后运行 `vyku.exe`
 
-发布包命名示例：`vyku-v0.14.1-windows-x64-portable.zip`。安装包标注 `installer`，便携包标注 `portable`。
+发布包命名示例：`vyku-v0.18.1-windows-x64-portable.zip`。安装包标注 `installer`，便携包标注 `portable`。
 
-**Android**: 下载 `vyku-v0.14.1-android.apk` 和同名 `.sha256` 文件。安装前核对 APK 的 SHA-256；从浏览器或文件管理器安装时，仅临时允许“安装未知应用”，完成后恢复该来源的禁止安装设置。
+**Android**: 下载 `vyku-v0.18.1-android.apk` 和同名 `.sha256` 文件。安装前核对 APK 的 SHA-256；从浏览器或文件管理器安装时，仅临时允许“安装未知应用”，完成后恢复该来源的禁止安装设置。
 
 发布页说明提供简体中文、繁體中文、English 三语。
 
@@ -99,6 +105,8 @@ V0.14.1 的 schema 3 是首个公开备份兼容基线，包含数据库、活�
 ## 文档
 
 - 产品文档 - 内部开发文档，不随公开仓库发布
+- [官网](https://elliotsu1107.github.io/vyku/) - 三语项目站点（同仓库 `site/` 构建产物）
+- 发布由 GitHub Actions 自动完成：推送 `v*` tag 即构建 Windows 与 Android 双平台并创建 Release
 - [更新日志](CHANGELOG.md) - 版本更新说明
 - [Release Notes](release-notes/) - GitHub Releases 发布说明归档
 

@@ -50,15 +50,21 @@
 
 ---
 
+## 官網
+
+<https://elliotsu1107.github.io/vyku/> —— 三語（簡體 / 繁體 / English）介紹、使用文件、下載入口與更新日誌。
+
+---
+
 ## 下載安裝
 
 訪問 [GitHub Releases](https://github.com/elliotsu1107/vyku-releases/releases) 下載最新版本。
 
 **Windows**: 下載最新 `vyku-v<version>-windows-x64-portable.zip`，解壓後執行 `vyku.exe`
 
-發布包命名示例：`vyku-v0.14.1-windows-x64-portable.zip`。安裝包標註 `installer`，便攜包標註 `portable`。
+發布包命名示例：`vyku-v0.18.1-windows-x64-portable.zip`。安裝包標註 `installer`，便攜包標註 `portable`。
 
-**Android**: 下載 `vyku-v0.14.1-android.apk` 和同名 `.sha256` 檔案。安裝前核對 APK 的 SHA-256；從瀏覽器或檔案管理器安裝時，只暫時允許「安裝未知應用程式」，完成後恢復該來源的禁止安裝設定。
+**Android**: 下載 `vyku-v0.18.1-android.apk` 和同名 `.sha256` 檔案。安裝前核對 APK 的 SHA-256；從瀏覽器或檔案管理器安裝時，只暫時允許「安裝未知應用程式」，完成後恢復該來源的禁止安裝設定。
 
 發布頁說明提供簡體中文、繁體中文、English 三語。
 
@@ -92,6 +98,8 @@ V0.14.1 的 schema 3 是第一個公開備份相容基線，包含資料庫、�
 ## 文件
 
 - 產品文件 - 內部開發文件，不隨公開倉庫發布
+- [官網](https://elliotsu1107.github.io/vyku/) - 三語專案站點（同倉庫 `site/` 建置產物）
+- 發布由 GitHub Actions 自動完成：推送 `v*` tag 即建置 Windows 與 Android 雙平台並建立 Release
 - [更新日誌](CHANGELOG-zh-Hant.md) - 版本更新說明
 - [Release Notes](release-notes/) - GitHub Releases 發布說明歸檔
 

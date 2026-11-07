@@ -50,15 +50,21 @@ Vyku is a family digital asset hub that helps you manage all your important asse
 
 ---
 
+## Website
+
+<https://elliotsu1107.github.io/vyku/> — project overview, documentation, download entry points and changelog in Simplified Chinese, Traditional Chinese and English.
+
+---
+
 ## Download & Install
 
 Visit [GitHub Releases](https://github.com/elliotsu1107/vyku-releases/releases) to download the latest version.
 
 **Windows**: Download the latest `vyku-v<version>-windows-x64-portable.zip`, extract it, and run `vyku.exe`.
 
-Package name example: `vyku-v0.14.1-windows-x64-portable.zip`. Installers use `installer`; portable packages use `portable`.
+Package name example: `vyku-v0.18.1-windows-x64-portable.zip`. Installers use `installer`; portable packages use `portable`.
 
-**Android**: Download `vyku-v0.14.1-android.apk` and its matching `.sha256` file. Verify the APK SHA-256 before installation. When installing from a browser or file manager, allow “Install unknown apps” only temporarily and disable it for that source afterward.
+**Android**: Download `vyku-v0.18.1-android.apk` and its matching `.sha256` file. Verify the APK SHA-256 before installation. When installing from a browser or file manager, allow “Install unknown apps” only temporarily and disable it for that source afterward.
 
 Release notes are provided in Simplified Chinese, Traditional Chinese, and English.
 
@@ -92,6 +98,8 @@ The database file is `vyku.sqlite`, and attachments live under `vault/assets/`. 
 ## Documentation
 
 - Product docs - Internal development documents, not published with the public repository
+- [Website](https://elliotsu1107.github.io/vyku/) — trilingual project site (built from `site/` in this repository)
+- Releases are built automatically by GitHub Actions: pushing a `v*` tag builds both Windows and Android and creates the release
 - [Changelog](CHANGELOG-en.md) - Version update notes
 - [Release Notes](release-notes/) - Archived GitHub Releases notes
 
